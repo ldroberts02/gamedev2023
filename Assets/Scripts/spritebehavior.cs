@@ -7,10 +7,13 @@ public class SpriteBehavior : MonoBehaviour
 {
     public SpriteRenderer spriteRender;
     public Sprite MiddleSprite;
-    public Sprite LeftSprite;
-    public Sprite RightSprite;
+    public Sprite UpperLeftSprite;
+    public Sprite LowerLeftSprite;
+    public Sprite UpperRightSprite;
+    public Sprite LowerRightSprite;
     public int positionNum = 0;
     public bool movetest = false;
+    public bool upper = false;
     public Vector3 location1 = new Vector3(-6,0,0);
     public Vector3 location2 = new Vector3(6,0,0);
     
@@ -25,7 +28,14 @@ public class SpriteBehavior : MonoBehaviour
 
         if (positionNum == 1)
         {
-            spriteRender.sprite = LeftSprite;
+            if (upper)
+            {
+                spriteRender.sprite = UpperLeftSprite;
+            }
+            else
+            {
+                spriteRender.sprite = LowerLeftSprite;
+            }
         }
         if (positionNum == 2)
         {
@@ -33,7 +43,14 @@ public class SpriteBehavior : MonoBehaviour
         }
         if (positionNum == 3)
         {
-            spriteRender.sprite = RightSprite;
+            if (upper)
+            {
+                spriteRender.sprite = UpperRightSprite;
+            }
+            else
+            {
+                spriteRender.sprite = LowerRightSprite;
+            }
         }
 
     }
